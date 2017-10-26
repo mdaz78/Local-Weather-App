@@ -55,11 +55,13 @@ function getWeather(latitude, longitude) {
                 if (tempCheck === "c") {
                     tempCheck = "f";
                     temperature = ((9 * recieved.main.temp) / 5) + 32;
+                    temperature = temperature.toFixed(2);
                     var temperatureHTML = '<p>'+temperature+' &deg;F</p>';
                     document.getElementById("temp").innerHTML = temperatureHTML;
                 } else {
                     tempCheck = "c";
                     temperature = (5 * (temperature - 32)) / 9;
+                    temperature = temperature.toFixed(2);
                     var temperatureHTML = '<p>'+temperature+' &deg;C</p>';
                     document.getElementById("temp").innerHTML = temperatureHTML;
                 }
