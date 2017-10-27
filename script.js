@@ -1,6 +1,3 @@
-var loc;
-var latitude;
-var longitude;
 var city;
 var icon;
 var description;
@@ -11,10 +8,7 @@ var tempCheck = "c";
 function weather() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
-            loc = [position.coords.latitude, position.coords.longitude];
-            latitude = loc[0];
-            longitude = loc[1];
-            getWeather(latitude, longitude);
+            getWeather(position.coords.latitude, position.coords.longitude);
         });
     } else {
         alert("err...geolocation disabled!");
