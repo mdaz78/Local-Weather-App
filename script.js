@@ -5,9 +5,9 @@ var city;
 var icon;
 var description;
 var temperature;
-var toggleButton = document.getElementById("toggle");
 var tempCheck = "c";
 
+// function to retrieve latitude and longitude
 function weather() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
